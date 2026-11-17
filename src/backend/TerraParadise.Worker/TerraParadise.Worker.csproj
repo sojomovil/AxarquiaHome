@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-TerraParadise.Worker-94782e6c-09e3-4ff4-a606-adfc043630cc</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TerraParadise.Application\TerraParadise.Application.csproj" />
+    <ProjectReference Include="..\TerraParadise.Infrastructure\TerraParadise.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>

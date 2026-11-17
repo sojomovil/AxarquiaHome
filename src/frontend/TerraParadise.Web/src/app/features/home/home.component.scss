@@ -1,0 +1,467 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 44px 0 92px;
+  background:
+    radial-gradient(ellipse at 42% 4%, rgba(245, 239, 226, 0.78), transparent 34%),
+    #fbfaf7;
+}
+
+.hero-grid {
+  display: grid;
+  min-height: 560px;
+  align-items: center;
+  grid-template-columns: 0.88fr 1.12fr;
+  gap: 55px;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  padding-block: 24px;
+}
+
+.hero h1 {
+  margin: 22px 0 15px;
+  color: var(--ink);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: clamp(4.5rem, 8.5vw, 7.7rem);
+  font-weight: 600;
+  letter-spacing: -0.095em;
+  line-height: 0.88;
+}
+
+.hero h1 span {
+  color: var(--green);
+}
+
+.hero-subtitle {
+  margin: 24px 0 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.hero-description {
+  max-width: 440px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.97rem;
+  line-height: 1.75;
+}
+
+.primary-button,
+.light-button {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 29px;
+  padding: 0 22px;
+  border-radius: 7px;
+  background: var(--green);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.primary-button:hover {
+  transform: translateY(-2px);
+  background: var(--green-dark);
+}
+
+.primary-button span,
+.light-button span,
+.text-link span {
+  font-size: 1.1rem;
+}
+
+.hero-signature {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 45px;
+  color: #8a938c;
+  font-size: 0.78rem;
+}
+
+.signature-line {
+  width: 32px;
+  height: 1px;
+  background: #c6c9bf;
+}
+
+.landscape {
+  position: relative;
+  min-height: 500px;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 45% 45% 12px 12px;
+  background: linear-gradient(180deg, #d8e6e1 0%, #dce5d8 57%, #e8d9bf 100%);
+}
+
+.sun {
+  position: absolute;
+  top: 13%;
+  right: 17%;
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #efc995;
+  box-shadow: 0 0 0 20px rgba(239, 201, 149, 0.14);
+}
+
+.ridge {
+  position: absolute;
+  right: -8%;
+  bottom: 17%;
+  left: -8%;
+  height: 55%;
+  border-radius: 50% 50% 0 0;
+}
+
+.ridge-back {
+  bottom: 22%;
+  transform: rotate(-8deg);
+  background: #a7b9a2;
+  clip-path: polygon(0 60%, 14% 35%, 29% 42%, 46% 8%, 59% 34%, 76% 18%, 100% 52%, 100% 100%, 0 100%);
+}
+
+.ridge-front {
+  height: 39%;
+  transform: rotate(4deg);
+  background: #547969;
+  clip-path: polygon(0 42%, 17% 20%, 31% 35%, 46% 5%, 68% 28%, 84% 17%, 100% 45%, 100% 100%, 0 100%);
+}
+
+.sea {
+  position: absolute;
+  z-index: -1;
+  right: -10%;
+  bottom: -7%;
+  left: -10%;
+  height: 29%;
+  border-radius: 50% 50% 0 0;
+  background: linear-gradient(160deg, #6e9a98, #2e6668);
+}
+
+.landscape-label {
+  position: absolute;
+  top: 27px;
+  left: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 255, 255, 0.68);
+  border-radius: 30px;
+  background: rgba(251, 250, 247, 0.72);
+  color: #44574f;
+  font-size: 0.73rem;
+  backdrop-filter: blur(8px);
+}
+
+.label-dot {
+  width: 7px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.landscape-caption {
+  position: absolute;
+  right: 26px;
+  bottom: 30px;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  display: grid;
+  width: 27px;
+  height: 42px;
+  place-items: start center;
+  padding-top: 8px;
+  border: 1px solid #d7d9d2;
+  border-radius: 20px;
+}
+
+.scroll-cue span {
+  width: 3px;
+  height: 7px;
+  border-radius: 3px;
+  background: var(--green);
+}
+
+.territory-section {
+  padding: 105px 0 112px;
+  background: #f3efe6;
+}
+
+.territory-grid {
+  display: grid;
+  align-items: end;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 90px;
+}
+
+.territory-heading .section-title {
+  margin-bottom: 0;
+}
+
+.territory-copy {
+  padding-bottom: 5px;
+}
+
+.territory-copy .section-copy {
+  margin: 0 0 21px;
+  font-size: 0.97rem;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--green);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.landscape-strip {
+  display: grid;
+  margin-top: 54px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.strip-card {
+  position: relative;
+  display: flex;
+  min-height: 190px;
+  align-items: flex-end;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.97rem;
+  font-weight: 600;
+}
+
+.strip-card::before,
+.strip-card::after {
+  position: absolute;
+  content: '';
+}
+
+.strip-card::before {
+  inset: 0;
+  background: linear-gradient(180deg, transparent 38%, rgba(23, 45, 37, 0.66));
+}
+
+.strip-card::after {
+  right: -10%;
+  bottom: 25%;
+  left: -10%;
+  height: 60%;
+  border-radius: 50% 50% 0 0;
+}
+
+.strip-card span {
+  position: relative;
+  z-index: 1;
+}
+
+.strip-index {
+  font-size: 0.71rem;
+  opacity: 0.72;
+}
+
+.strip-village {
+  background: linear-gradient(150deg, #d2b999, #81937d);
+}
+
+.strip-village::after {
+  background: #71856f;
+  clip-path: polygon(0 45%, 16% 28%, 30% 42%, 51% 10%, 70% 38%, 86% 20%, 100% 48%, 100% 100%, 0 100%);
+}
+
+.strip-coast {
+  background: linear-gradient(150deg, #b9d1ce, #558b8d);
+}
+
+.strip-coast::after {
+  background: #427477;
+  clip-path: polygon(0 42%, 21% 30%, 37% 40%, 53% 11%, 69% 37%, 83% 23%, 100% 49%, 100% 100%, 0 100%);
+}
+
+.strip-mountains {
+  background: linear-gradient(150deg, #d6c6a9, #899c85);
+}
+
+.strip-mountains::after {
+  background: #627966;
+  clip-path: polygon(0 52%, 15% 29%, 34% 39%, 53% 7%, 71% 33%, 86% 17%, 100% 47%, 100% 100%, 0 100%);
+}
+
+.project-section {
+  padding: 112px 0;
+  background: #fbfaf7;
+}
+
+.project-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 0.8fr;
+  gap: 95px;
+}
+
+.project-grid .section-copy {
+  font-size: 0.98rem;
+}
+
+.project-note {
+  position: relative;
+  padding: 32px 38px 35px;
+  border-left: 1px solid #d7ded6;
+}
+
+.note-mark {
+  color: var(--coral);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 4.5rem;
+  line-height: 0.9;
+}
+
+.project-note p {
+  margin: 7px 0 24px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.32rem;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.5;
+}
+
+.note-signature {
+  color: var(--green);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.closing-section {
+  padding: 83px 0;
+  background: var(--green-dark);
+  color: #fff;
+}
+
+.closing-inner {
+  text-align: center;
+}
+
+.closing-inner .eyebrow {
+  color: #c9d5c9;
+}
+
+.closing-inner h2 {
+  margin: 17px 0 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  line-height: 1.1;
+}
+
+.light-button {
+  margin-top: 28px;
+  background: #f6f1e7;
+  color: var(--green-dark);
+}
+
+.light-button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    min-height: 510px;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .landscape {
+    min-height: 430px;
+  }
+
+  .territory-grid,
+  .project-grid {
+    gap: 44px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 20px 0 74px;
+  }
+
+  .hero-grid,
+  .territory-grid,
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-grid {
+    gap: 34px;
+  }
+
+  .hero-copy {
+    padding-top: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4.5rem, 18vw, 6.5rem);
+  }
+
+  .hero-signature {
+    margin-top: 26px;
+  }
+
+  .landscape {
+    min-height: 350px;
+    border-radius: 44% 44% 10px 10px;
+  }
+
+  .territory-section,
+  .project-section {
+    padding: 75px 0;
+  }
+
+  .territory-grid,
+  .project-grid {
+    gap: 25px;
+  }
+
+  .landscape-strip {
+    margin-top: 35px;
+    grid-template-columns: 1fr;
+  }
+
+  .strip-card {
+    min-height: 150px;
+  }
+
+  .project-note {
+    padding: 22px 0 5px 25px;
+  }
+}

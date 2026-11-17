@@ -1,0 +1,150 @@
+.site-header {
+  position: relative;
+  z-index: 2;
+  background: #fbfaf7;
+}
+
+.header-inner,
+.footer-inner {
+  display: flex;
+  min-height: 86px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.brand-mark {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: flex-end;
+  gap: 3px;
+  padding: 5px;
+  border-radius: 9px;
+  background: var(--green);
+}
+
+.brand-mark span {
+  width: 5px;
+  border-radius: 4px 4px 2px 2px;
+  background: #f6f1e7;
+}
+
+.brand-mark span:nth-child(1) {
+  height: 9px;
+}
+
+.brand-mark span:nth-child(2) {
+  height: 15px;
+}
+
+.brand-mark span:nth-child(3) {
+  height: 12px;
+}
+
+.brand-name {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.brand-name span {
+  color: var(--green);
+  font-weight: 500;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  color: #65736d;
+  font-size: 0.9rem;
+}
+
+.main-nav a,
+.header-link {
+  transition: color 160ms ease;
+}
+
+.main-nav a:hover,
+.header-link:hover {
+  color: var(--green);
+}
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--green);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.site-footer {
+  border-top: 1px solid #e8e5de;
+  background: #fbfaf7;
+}
+
+.footer-inner {
+  min-height: 92px;
+  gap: 24px;
+}
+
+.footer-inner p,
+.footer-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.brand-footer .brand-mark {
+  width: 26px;
+  height: 26px;
+}
+
+.brand-footer .brand-name {
+  font-size: 0.96rem;
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    min-height: 74px;
+  }
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .header-link {
+    display: none;
+  }
+
+  .footer-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-block: 22px;
+    text-align: center;
+  }
+
+  .footer-inner p,
+  .footer-note {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-nav {
+    gap: 12px;
+    font-size: 0.76rem;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+  }
+}
