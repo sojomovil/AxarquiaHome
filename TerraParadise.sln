@@ -27,6 +27,67 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraParadise.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraParadise.Api.Tests", "tests\TerraParadise.Api.Tests\TerraParadise.Api.Tests.csproj", "{C876FBB4-612C-412B-8473-E81F346543AF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "frontend", "frontend", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TerraParadise.Web", "TerraParadise.Web", "{F447F5EC-0B02-4223-8D61-E5DB6B15C072}"
+	ProjectSection(SolutionItems) = preProject
+		src\frontend\TerraParadise.Web\.editorconfig = src\frontend\TerraParadise.Web\.editorconfig
+		src\frontend\TerraParadise.Web\.gitignore = src\frontend\TerraParadise.Web\.gitignore
+		src\frontend\TerraParadise.Web\.prettierrc = src\frontend\TerraParadise.Web\.prettierrc
+		src\frontend\TerraParadise.Web\angular.json = src\frontend\TerraParadise.Web\angular.json
+		src\frontend\TerraParadise.Web\package-lock.json = src\frontend\TerraParadise.Web\package-lock.json
+		src\frontend\TerraParadise.Web\package.json = src\frontend\TerraParadise.Web\package.json
+		src\frontend\TerraParadise.Web\README.md = src\frontend\TerraParadise.Web\README.md
+		src\frontend\TerraParadise.Web\tsconfig.app.json = src\frontend\TerraParadise.Web\tsconfig.app.json
+		src\frontend\TerraParadise.Web\tsconfig.json = src\frontend\TerraParadise.Web\tsconfig.json
+		src\frontend\TerraParadise.Web\tsconfig.spec.json = src\frontend\TerraParadise.Web\tsconfig.spec.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "node_modules", "node_modules", "{9B225D2D-97FA-4446-8AE2-4598CFA51243}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{21704EB6-A048-452E-B880-ED7B3A77030D}"
+	ProjectSection(SolutionItems) = preProject
+		src\frontend\TerraParadise.Web\src\index.html = src\frontend\TerraParadise.Web\src\index.html
+		src\frontend\TerraParadise.Web\src\main.ts = src\frontend\TerraParadise.Web\src\main.ts
+		src\frontend\TerraParadise.Web\src\styles.scss = src\frontend\TerraParadise.Web\src\styles.scss
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{29AB61AB-BF16-4104-A8C6-5F3887953CE3}"
+	ProjectSection(SolutionItems) = preProject
+		src\frontend\TerraParadise.Web\src\app\app.config.ts = src\frontend\TerraParadise.Web\src\app\app.config.ts
+		src\frontend\TerraParadise.Web\src\app\app.html = src\frontend\TerraParadise.Web\src\app\app.html
+		src\frontend\TerraParadise.Web\src\app\app.routes.ts = src\frontend\TerraParadise.Web\src\app\app.routes.ts
+		src\frontend\TerraParadise.Web\src\app\app.spec.ts = src\frontend\TerraParadise.Web\src\app\app.spec.ts
+		src\frontend\TerraParadise.Web\src\app\app.ts = src\frontend\TerraParadise.Web\src\app\app.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "environments", "environments", "{E79B7B9F-6231-4FA2-8552-DBFD65C93E17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{F3B11BE1-0592-4F8D-ACF5-896184EFDAD7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "features", "features", "{9EE8F16B-C465-4E86-BFED-63851DAD62CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{F8CB264C-AA77-4118-8C7A-1C43F6B08E21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{20ED2E67-93E5-48C6-8E53-0B63F17B3FB3}"
+	ProjectSection(SolutionItems) = preProject
+		src\frontend\TerraParadise.Web\src\app\core\services\api.service.ts = src\frontend\TerraParadise.Web\src\app\core\services\api.service.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{DB01F394-05BD-4D64-A299-2ABC16653EAF}"
+	ProjectSection(SolutionItems) = preProject
+		src\frontend\TerraParadise.Web\src\app\features\home\home.component.html = src\frontend\TerraParadise.Web\src\app\features\home\home.component.html
+		src\frontend\TerraParadise.Web\src\app\features\home\home.component.scss = src\frontend\TerraParadise.Web\src\app\features\home\home.component.scss
+		src\frontend\TerraParadise.Web\src\app\features\home\home.component.ts = src\frontend\TerraParadise.Web\src\app\features\home\home.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "layout", "layout", "{756FD511-8215-4DB2-B401-E8BE79E2DD4A}"
+	ProjectSection(SolutionItems) = preProject
+		src\frontend\TerraParadise.Web\src\app\shared\layout\site-layout.component.html = src\frontend\TerraParadise.Web\src\app\shared\layout\site-layout.component.html
+		src\frontend\TerraParadise.Web\src\app\shared\layout\site-layout.component.scss = src\frontend\TerraParadise.Web\src\app\shared\layout\site-layout.component.scss
+		src\frontend\TerraParadise.Web\src\app\shared\layout\site-layout.component.ts = src\frontend\TerraParadise.Web\src\app\shared\layout\site-layout.component.ts
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraParadise.Data", "src\backend\TerraParadise.Data\TerraParadise.Data.csproj", "{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}"
 EndProject
 Global
@@ -174,6 +235,21 @@ Global
 		{24CD8252-B42B-4D25-89DE-0FB182148591} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{AB5290B6-935D-4B70-951D-9A8C9829E702} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{C876FBB4-612C-412B-8473-E81F346543AF} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{F447F5EC-0B02-4223-8D61-E5DB6B15C072} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{9B225D2D-97FA-4446-8AE2-4598CFA51243} = {F447F5EC-0B02-4223-8D61-E5DB6B15C072}
+		{21704EB6-A048-452E-B880-ED7B3A77030D} = {F447F5EC-0B02-4223-8D61-E5DB6B15C072}
+		{29AB61AB-BF16-4104-A8C6-5F3887953CE3} = {21704EB6-A048-452E-B880-ED7B3A77030D}
+		{E79B7B9F-6231-4FA2-8552-DBFD65C93E17} = {21704EB6-A048-452E-B880-ED7B3A77030D}
+		{F3B11BE1-0592-4F8D-ACF5-896184EFDAD7} = {29AB61AB-BF16-4104-A8C6-5F3887953CE3}
+		{9EE8F16B-C465-4E86-BFED-63851DAD62CC} = {29AB61AB-BF16-4104-A8C6-5F3887953CE3}
+		{F8CB264C-AA77-4118-8C7A-1C43F6B08E21} = {29AB61AB-BF16-4104-A8C6-5F3887953CE3}
+		{20ED2E67-93E5-48C6-8E53-0B63F17B3FB3} = {F3B11BE1-0592-4F8D-ACF5-896184EFDAD7}
+		{DB01F394-05BD-4D64-A299-2ABC16653EAF} = {9EE8F16B-C465-4E86-BFED-63851DAD62CC}
+		{756FD511-8215-4DB2-B401-E8BE79E2DD4A} = {F8CB264C-AA77-4118-8C7A-1C43F6B08E21}
 		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C} = {FE360695-3F2B-1049-3887-35FBB5135923}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {813DDB61-5F18-43B0-AA67-C44085E308A6}
 	EndGlobalSection
 EndGlobal
