@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraParadise.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraParadise.Api.Tests", "tests\TerraParadise.Api.Tests\TerraParadise.Api.Tests.csproj", "{C876FBB4-612C-412B-8473-E81F346543AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerraParadise.Data", "src\backend\TerraParadise.Data\TerraParadise.Data.csproj", "{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,18 @@ Global
 		{C876FBB4-612C-412B-8473-E81F346543AF}.Release|x64.Build.0 = Release|Any CPU
 		{C876FBB4-612C-412B-8473-E81F346543AF}.Release|x86.ActiveCfg = Release|Any CPU
 		{C876FBB4-612C-412B-8473-E81F346543AF}.Release|x86.Build.0 = Release|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Debug|x64.Build.0 = Debug|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Debug|x86.Build.0 = Debug|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Release|x64.ActiveCfg = Release|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Release|x64.Build.0 = Release|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Release|x86.ActiveCfg = Release|Any CPU
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -160,5 +174,6 @@ Global
 		{24CD8252-B42B-4D25-89DE-0FB182148591} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{AB5290B6-935D-4B70-951D-9A8C9829E702} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 		{C876FBB4-612C-412B-8473-E81F346543AF} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{2F5C51CE-97DE-4535-ACCC-6C365EEFEC2C} = {FE360695-3F2B-1049-3887-35FBB5135923}
 	EndGlobalSection
 EndGlobal

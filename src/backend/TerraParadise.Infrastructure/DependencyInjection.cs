@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TerraParadise.Application.Agencies;
+using TerraParadise.Data.Generated;
 using TerraParadise.Infrastructure.Identity;
 using TerraParadise.Infrastructure.Persistence;
 
@@ -13,7 +15,18 @@ public static class DependencyInjection
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddDbContext<TerraParadiseDbContext>(options =>
+        services.AddDbContext<TerraParadiseDbContext>(ConfigureSqlServer);
+        services.AddDbContext<TerraParadiseDataDbContext>(ConfigureSqlServer);
+        services.AddScoped<IAgencyService, AgencyService>();
+
+        services
+            .AddIdentityCore<ApplicationUser>()
+            .AddRoles<IdentityRole<Guid>>()
+            .AddEntityFrameworkStores<TerraParadiseDbContext>();
+
+        return services;
+
+        void ConfigureSqlServer(DbContextOptionsBuilder options)
         {
             var connectionString = configuration.GetConnectionString("TerraParadiseDb");
 
@@ -24,13 +37,6 @@ public static class DependencyInjection
             }
 
             options.UseSqlServer(connectionString);
-        });
-
-        services
-            .AddIdentityCore<ApplicationUser>()
-            .AddRoles<IdentityRole<Guid>>()
-            .AddEntityFrameworkStores<TerraParadiseDbContext>();
-
-        return services;
+        }
     }
 }

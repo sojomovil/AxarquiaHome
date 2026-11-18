@@ -12,3 +12,5 @@ npm test -- --watch=false
 ```
 
 La aplicación de desarrollo se sirve en `http://localhost:4200`. La URL base local de la API está en `src/environments/environment.ts`; producción usa `/api` y necesita un proxy configurado por el hosting. La guía general se encuentra en la raíz del repositorio.
+
+La portada reproduce bajo demanda el vídeo local [torrox-faro.mp4](./public/videos/torrox-faro.mp4). Si el navegador no puede cargarlo, se conserva la ilustración y el lema de la portada.

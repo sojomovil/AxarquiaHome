@@ -1,4 +1,5 @@
 using TerraParadise.Api;
+using TerraParadise.Api.Agencies;
 using TerraParadise.Application;
 using TerraParadise.Infrastructure;
 
@@ -23,6 +24,7 @@ app.UseAuthorization();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapAgencies();
 }
 
 app.MapHealthChecks("/health");

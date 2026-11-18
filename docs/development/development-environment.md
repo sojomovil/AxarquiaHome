@@ -16,6 +16,10 @@
 
 El Worker queda en espera sin ejecutar trabajos. No se crean tablas; Identity debe migrarse explícitamente en una fase posterior. La API local usa el puerto HTTP 5135 y Angular 4200. Compose publica la API en 8080.
 
+Para gestionar agencias, arranca la API con el perfil `http` y Angular con `npm start`, y abre [Agencias](http://localhost:4200/agencias). Configura la API para que apunte a `AxarquiaHomeDb` o a una base de pruebas con el mismo esquema. La pantalla y su API solo están disponibles en desarrollo mientras no haya autenticación para la gestión.
+
+El directorio muestra **Crear** con el símbolo **+** y **Ver** (ficha de solo lectura), **Editar** y **Eliminar** como botones de icono con etiquetas accesibles.
+
 ## Validación
 
 Desde la raíz: `dotnet restore TerraParadise.sln`, `dotnet build TerraParadise.sln -c Release` y `dotnet test TerraParadise.sln -c Release`. En el frontend: `npm run build` y `npm test -- --watch=false`.

@@ -13,6 +13,7 @@ public static class DependencyInjection
             .Get<string[]>() ?? [];
 
         services.AddOpenApi();
+        services.AddValidation();
         services.AddProblemDetails();
         services.AddExceptionHandler<GlobalExceptionHandler>();
         services.AddAuthorization();

@@ -17,17 +17,30 @@
       </div>
     </div>
 
-    <div class="landscape" role="img" aria-label="Ilustración abstracta del paisaje de la Axarquía">
-      <div class="sun"></div>
-      <div class="ridge ridge-back"></div>
-      <div class="ridge ridge-front"></div>
-      <div class="sea"></div>
+    <figure class="landscape" [class.landscape-with-video]="!videoUnavailable()">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="ridge ridge-back" aria-hidden="true"></div>
+      <div class="ridge ridge-front" aria-hidden="true"></div>
+      <div class="sea" aria-hidden="true"></div>
+      @if (!videoUnavailable()) {
+        <video
+          class="landscape-video"
+          src="videos/torrox-faro.mp4"
+          aria-label="Vídeo del faro de Torrox"
+          controls
+          playsinline
+          preload="metadata"
+          (error)="videoUnavailable.set(true)"
+        ></video>
+      } @else {
+        <p class="landscape-status" role="status">No se pudo cargar el vídeo.</p>
+      }
       <div class="landscape-label">
         <span class="label-dot"></span>
         Axarquía · Málaga
       </div>
-      <span class="landscape-caption">Un territorio<br />para vivirlo</span>
-    </div>
+      <figcaption class="landscape-caption">Un territorio<br />para vivirlo</figcaption>
+    </figure>
   </div>
   <a class="scroll-cue" href="#territorio" aria-label="Desplazarse a la sección El territorio">
     <span></span>

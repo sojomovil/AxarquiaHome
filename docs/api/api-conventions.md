@@ -9,3 +9,7 @@
 - Las operaciones futuras deben ser asíncronas, aceptar `CancellationToken`, validar entradas y versionar los contratos cuando haya compatibilidad que preservar.
 
 No hay endpoints de usuarios, autenticación ni propiedades en esta entrega.
+
+## Agencias (solo Development)
+
+`GET /api/agencies` lista las agencias y `GET /api/agencies/{id}` obtiene una. `POST /api/agencies` devuelve `201` con `Location`, `PUT /api/agencies/{id}` devuelve la agencia actualizada y `DELETE /api/agencies/{id}` devuelve `204`. Si una agencia tiene inmuebles asociados, no se puede eliminar (`409`); puede marcarse como inactiva.

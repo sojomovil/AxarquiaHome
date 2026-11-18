@@ -4,7 +4,8 @@
 |---|---|
 | TerraParadise.Domain | Ninguna |
 | TerraParadise.Application | Domain |
-| TerraParadise.Infrastructure | Application, Domain |
+| TerraParadise.Data | Ninguna referencia a proyectos; contiene el modelo de persistencia generado por EF Core |
+| TerraParadise.Infrastructure | Application, Domain, Data |
 | TerraParadise.Api | Application, Infrastructure |
 | TerraParadise.Worker | Application, Infrastructure |
 | Domain.Tests | Domain |

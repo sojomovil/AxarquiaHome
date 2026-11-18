@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TerraParadise.Domain\TerraParadise.Domain.csproj" />
     <ProjectReference Include="..\TerraParadise.Application\TerraParadise.Application.csproj" />
+    <ProjectReference Include="..\TerraParadise.Data\TerraParadise.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

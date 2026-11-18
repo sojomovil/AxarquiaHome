@@ -140,6 +140,8 @@
 
 @media (max-width: 480px) {
   .main-nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 12px;
     font-size: 0.76rem;
   }

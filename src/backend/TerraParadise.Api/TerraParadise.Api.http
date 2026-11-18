@@ -1,6 +1,33 @@
 @TerraParadise.Api_HostAddress = http://localhost:5135
 
-GET {{TerraParadise.Api_HostAddress}}/weatherforecast/
+@agencyId = 0
+
+### Listar agencias
+GET {{TerraParadise.Api_HostAddress}}/api/agencies
 Accept: application/json
 
-###
+### Obtener una agencia (404 para el ID 0)
+GET {{TerraParadise.Api_HostAddress}}/api/agencies/{{agencyId}}
+
+### Crear una agencia de prueba (ejecutar solo en una base de pruebas)
+POST {{TerraParadise.Api_HostAddress}}/api/agencies
+Content-Type: application/json
+
+{
+  "name": "Agencia de prueba",
+  "email": "agencia@example.com",
+  "isActive": true
+}
+
+### Actualizar la agencia de prueba (usar el ID devuelto al crearla)
+PUT {{TerraParadise.Api_HostAddress}}/api/agencies/{{agencyId}}
+Content-Type: application/json
+
+{
+  "name": "Agencia de prueba",
+  "email": "agencia@example.com",
+  "isActive": false
+}
+
+### Eliminar la agencia de prueba
+DELETE {{TerraParadise.Api_HostAddress}}/api/agencies/{{agencyId}}
