@@ -15,6 +15,14 @@ export const routes: Routes = [
               (module) => module.AgenciesComponent,
             ),
         },
+        {
+          path: 'propiedades',
+          title: 'Propiedades en venta | Axarquía Home',
+          loadComponent: () =>
+            import('./features/properties/properties.component').then(
+              (module) => module.PropertiesComponent,
+            ),
+        },
       ]),
   { path: '**', redirectTo: '' },
 ];

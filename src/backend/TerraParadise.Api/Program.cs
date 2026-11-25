@@ -1,5 +1,6 @@
 using TerraParadise.Api;
 using TerraParadise.Api.Agencies;
+using TerraParadise.Api.Properties;
 using TerraParadise.Application;
 using TerraParadise.Infrastructure;
 
@@ -25,6 +26,7 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
     app.MapAgencies();
+    app.MapProperties();
 }
 
 app.MapHealthChecks("/health");

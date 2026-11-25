@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TerraParadise.Application.Agencies;
+using TerraParadise.Application.Properties;
 using TerraParadise.Data.Generated;
 using TerraParadise.Infrastructure.Identity;
 using TerraParadise.Infrastructure.Persistence;
@@ -18,6 +19,7 @@ public static class DependencyInjection
         services.AddDbContext<TerraParadiseDbContext>(ConfigureSqlServer);
         services.AddDbContext<TerraParadiseDataDbContext>(ConfigureSqlServer);
         services.AddScoped<IAgencyService, AgencyService>();
+        services.AddScoped<IPropertyService, PropertyService>();
 
         services
             .AddIdentityCore<ApplicationUser>()

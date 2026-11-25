@@ -109,6 +109,8 @@ public partial class Property
 
     public virtual ICollection<PropertyImage> PropertyImages { get; set; } = new List<PropertyImage>();
 
+    public virtual ICollection<PropertyListing> PropertyListings { get; set; } = new List<PropertyListing>();
+
     public virtual ICollection<PropertySource> PropertySources { get; set; } = new List<PropertySource>();
 
     public virtual PropertyStatus PropertyStatus { get; set; } = null!;

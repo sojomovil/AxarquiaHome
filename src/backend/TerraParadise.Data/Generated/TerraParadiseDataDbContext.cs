@@ -38,6 +38,8 @@ public partial class TerraParadiseDataDbContext : DbContext
 
     public virtual DbSet<PropertyImage> PropertyImages { get; set; }
 
+    public virtual DbSet<PropertyListing> PropertyListings { get; set; }
+
     public virtual DbSet<PropertySource> PropertySources { get; set; }
 
     public virtual DbSet<PropertyStatus> PropertyStatuses { get; set; }
@@ -45,6 +47,8 @@ public partial class TerraParadiseDataDbContext : DbContext
     public virtual DbSet<PropertyType> PropertyTypes { get; set; }
 
     public virtual DbSet<Province> Provinces { get; set; }
+
+    public virtual DbSet<RentalBooking> RentalBookings { get; set; }
 
     public virtual DbSet<SavedSearch> SavedSearches { get; set; }
 
@@ -281,6 +285,10 @@ public partial class TerraParadiseDataDbContext : DbContext
                 .HasForeignKey(d => d.PropertyId)
                 .HasConstraintName("FK_PriceHistory_Property");
 
+            entity.HasOne(d => d.PropertyListing).WithMany(p => p.PriceHistories)
+                .HasForeignKey(d => d.PropertyListingId)
+                .HasConstraintName("FK_PriceHistory_PropertyListing");
+
             entity.HasOne(d => d.Source).WithMany(p => p.PriceHistories)
                 .HasForeignKey(d => d.SourceId)
                 .HasConstraintName("FK_PriceHistory_Source");
@@ -352,6 +360,71 @@ public partial class TerraParadiseDataDbContext : DbContext
                 .HasForeignKey(d => d.PropertyTypeId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Property_PropertyType");
+        });
+
+        modelBuilder.Entity<PropertyListing>(entity =>
+        {
+            entity.ToTable("PropertyListing");
+
+            entity.HasIndex(e => new { e.OperationType, e.PricePeriod, e.IsActive, e.Price }, "IX_PropertyListing_Search");
+
+            entity.HasIndex(e => new { e.PropertyId, e.OperationType, e.PricePeriod }, "UX_PropertyListing_Active_Mode")
+                .IsUnique()
+                .HasFilter("([IsActive]=(1))");
+
+            entity.Property(e => e.CreatedAtUtc)
+                .HasPrecision(0)
+                .HasDefaultValueSql("(sysutcdatetime())", "DF_PropertyListing_CreatedAtUtc");
+            entity.Property(e => e.CurrencyCode)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasDefaultValue("EUR", "DF_PropertyListing_Currency");
+            entity.Property(e => e.DepositAmount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.IsActive).HasDefaultValue(true, "DF_PropertyListing_IsActive");
+            entity.Property(e => e.OperationType).HasMaxLength(20);
+            entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.PricePeriod).HasMaxLength(20);
+            entity.Property(e => e.UpdatedAtUtc).HasPrecision(0);
+
+            entity.HasOne(d => d.Property).WithMany(p => p.PropertyListings)
+                .HasForeignKey(d => d.PropertyId)
+                .HasConstraintName("FK_PropertyListing_Property");
+        });
+
+        modelBuilder.Entity<RentalBooking>(entity =>
+        {
+            entity.ToTable("RentalBooking");
+
+            entity.HasIndex(e => new { e.PropertyListingId, e.StartDate, e.EndDate }, "IX_RentalBooking_Listing_Dates");
+
+            entity.Property(e => e.BillingUnit).HasMaxLength(20);
+            entity.Property(e => e.CreatedAtUtc)
+                .HasPrecision(0)
+                .HasDefaultValueSql("(sysutcdatetime())", "DF_RentalBooking_CreatedAtUtc");
+            entity.Property(e => e.CurrencyCode)
+                .HasMaxLength(3)
+                .IsUnicode(false)
+                .IsFixedLength()
+                .HasDefaultValue("EUR", "DF_RentalBooking_Currency");
+            entity.Property(e => e.DepositAmount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.Notes).HasMaxLength(1000);
+            entity.Property(e => e.Status)
+                .HasMaxLength(20)
+                .HasDefaultValue("Pending", "DF_RentalBooking_Status");
+            entity.Property(e => e.TotalAmount).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.UnitPriceSnapshot).HasColumnType("decimal(18, 2)");
+            entity.Property(e => e.UpdatedAtUtc).HasPrecision(0);
+
+            entity.HasOne(d => d.PropertyListing).WithMany(p => p.RentalBookings)
+                .HasForeignKey(d => d.PropertyListingId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RentalBooking_PropertyListing");
+
+            entity.HasOne(d => d.TenantUser).WithMany(p => p.RentalBookings)
+                .HasForeignKey(d => d.TenantUserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_RentalBooking_TenantUser");
         });
 
         modelBuilder.Entity<PropertyFeature>(entity =>

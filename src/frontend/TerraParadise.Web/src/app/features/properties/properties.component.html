@@ -1,0 +1,60 @@
+<section class="shell properties" aria-labelledby="properties-title">
+  <div class="page-heading">
+    <div>
+      <span class="eyebrow">Catálogo · Desarrollo</span>
+      <h1 id="properties-title" class="section-title">Propiedades en venta</h1>
+      <p class="section-copy">Listado de inmuebles publicados para compra.</p>
+    </div>
+  </div>
+
+  <section class="panel" [attr.aria-busy]="loading()" aria-labelledby="properties-list-title">
+    <h2 id="properties-list-title">Disponibles</h2>
+
+    @if (loading()) {
+      <p role="status">Cargando propiedades…</p>
+    } @else if (listError()) {
+      <p role="alert" class="error">{{ listError() }}</p>
+      <button type="button" (click)="load()">Reintentar</button>
+    } @else if (properties().length === 0) {
+      <p>No hay propiedades en venta publicadas.</p>
+    } @else {
+      <div class="cards" role="list" aria-label="Listado de propiedades en venta">
+        @for (property of properties(); track property.id) {
+          <article class="property-card" role="listitem">
+            <div class="property-head">
+              <h3>{{ property.title }}</h3>
+              @if (property.isFeatured) {
+                <span class="badge">Destacada</span>
+              }
+            </div>
+
+            <p class="price">{{ formatPrice(property) }}</p>
+
+            <dl class="details">
+              <div>
+                <dt>Tipo</dt>
+                <dd>{{ property.propertyType }}</dd>
+              </div>
+              <div>
+                <dt>Ubicación</dt>
+                <dd>{{ property.locality || property.municipality }}</dd>
+              </div>
+              <div>
+                <dt>Dormitorios</dt>
+                <dd>{{ property.bedrooms ?? '—' }}</dd>
+              </div>
+              <div>
+                <dt>Baños</dt>
+                <dd>{{ property.bathrooms ?? '—' }}</dd>
+              </div>
+              <div>
+                <dt>Superficie</dt>
+                <dd>{{ property.builtAreaM2 ? property.builtAreaM2 + ' m²' : '—' }}</dd>
+              </div>
+            </dl>
+          </article>
+        }
+      </div>
+    }
+  </section>
+</section>

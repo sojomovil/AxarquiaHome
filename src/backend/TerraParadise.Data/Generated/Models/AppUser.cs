@@ -35,6 +35,8 @@ public partial class AppUser
 
     public virtual ICollection<Property> Properties { get; set; } = new List<Property>();
 
+    public virtual ICollection<RentalBooking> RentalBookings { get; set; } = new List<RentalBooking>();
+
     public virtual ICollection<SavedSearch> SavedSearches { get; set; } = new List<SavedSearch>();
 
     public virtual ICollection<UserSubscription> UserSubscriptions { get; set; } = new List<UserSubscription>();

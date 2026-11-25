@@ -26,3 +26,9 @@ dotnet ef dbcontext scaffold 'Name=ConnectionStrings:TerraParadiseDb' Microsoft.
 ```
 
 `--no-onconfiguring` evita generar código de configuración de la conexión. Si la base contiene objetos ajenos a la aplicación (por ejemplo, tablas de Identity), limita la selección con `--schema` o `--table` **antes** de `-- --environment Development`. No uses `--force` salvo para regenerar archivos tras revisar los cambios: sobrescribe archivos generados, pero no elimina los correspondientes a objetos retirados del esquema. Mantén las extensiones parciales fuera de `Generated`.
+
+### Incorporar cambios sin reemplazar el modelo existente
+
+Para un scaffolding incremental, genera en directorios temporales fuera de los proyectos, manteniendo los namespaces actuales mediante `--namespace TerraParadise.Data.Generated.Models` y `--context-namespace TerraParadise.Data.Generated`. Incluye las tablas modificadas y sus principales para obtener sus relaciones completas. No reemplaces el contexto existente por el contexto parcial generado: perderías los mapeos de las tablas no seleccionadas. Integra solo las entidades nuevas, las propiedades y navegaciones afectadas, los `DbSet` y los bloques de configuración correspondientes; después elimina los archivos temporales y valida compilación y pruebas.
+
+El modelo incorpora `PropertyListing`, `RentalBooking` y la relación opcional `PriceHistory.PropertyListingId`. Se conservan las relaciones con `Property`, `AppUser` y `Source`, así como los índices, valores predeterminados y comportamientos de eliminación generados desde SQL Server. Esto no habilita flujos de anuncios o reservas, ni añade migraciones o cambios a la base de datos.

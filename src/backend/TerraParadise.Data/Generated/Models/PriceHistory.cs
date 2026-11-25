@@ -23,7 +23,11 @@ public partial class PriceHistory
 
     public string? Notes { get; set; }
 
+    public long? PropertyListingId { get; set; }
+
     public virtual Property Property { get; set; } = null!;
+
+    public virtual PropertyListing? PropertyListing { get; set; }
 
     public virtual Source? Source { get; set; }
 }
